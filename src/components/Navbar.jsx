@@ -1,5 +1,5 @@
 import React from "react";
-import { navLinks } from "#constants";
+import { navIcons, navLinks } from "#constants";
 import dayjs from "dayjs";
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
       <div>
         <ul>
             {
-                navLinks.map(({id, img}) => (
+                navIcons.map(({id, img}) => (
                     <li key={id}>
                         <img src={img} className="icom-hover" alt={`icon-${id}`} />
                     </li>
