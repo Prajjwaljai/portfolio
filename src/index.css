@@ -180,7 +180,7 @@ body {
     .techstack {
       @apply text-sm font-roboto p-5;
 
-      .label {
+    .label{
         @apply flex items-center ms-10 mt-7;
       }
 
