@@ -105,13 +105,14 @@ body {
       }
     }
   }
-
+  
   #window-controls {
     @apply flex gap-2;
 
     .close {
       @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
     }
+
 
     .minimize {
       @apply size-3.5 rounded-full bg-[#ffc030];
@@ -125,6 +126,12 @@ body {
   #window-header {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
   }
+  #window-header {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  }
+
 
   #safari {
     @apply w-4xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
@@ -171,7 +178,7 @@ body {
   }
 
   #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-3xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     h2 {
       @apply font-bold text-sm text-center w-full;
@@ -189,11 +196,11 @@ body {
 
         li {
           .check {
-            @apply text-[#00A154] w-5;
+            @apply text-[#00A154] w-7;
           }
 
           h3 {
-            @apply font-semibold text-[#00A154] w-32 ms-5;
+            @apply font-semibold text-[#00A154] w-48 ms-5;
           }
 
           ul {
@@ -401,4 +408,25 @@ body {
       }
     }
   }
+  #window-controls .close,
+  #window-controls .minimize,
+  #window-controls .maximize {
+    cursor: pointer;
+  }
+.window-maximized {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  z-index: 9999 !important; /* 🔥 ADD THIS LINE ONLY */
+}
+
+.react-pdf__Page__canvas {
+  pointer-events: none;
+}
+
 }

@@ -75,56 +75,63 @@ const dockApps = [
 ];
 
 const blogPosts = [
+
   {
     id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+    date: "Jan 8, 2024",
+    title: "A Complete Guide to Modern React Patterns",
+    image: "/images/blog11.png",
+    link: "https://kentcdodds.com/blog",
   },
+  
   {
     id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    date: "Nov 2, 2023",
+    title: "Designing Better UI with Practical UX Principles",
+    image: "/images/blog22.jpg",
+    link: "https://uxdesign.cc/",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    date: "Oct 10, 2023",
+    title: "Scaling Web Applications the Right Way",
+    image: "/images/blog33.png",
+    link: "https://vercel.com/blog",
   },
 ];
 
+
 const techStack = [
   {
-    category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    category: "Programming Languages",
+    items: ["C", "C++", "Python", "JavaScript", "TypeScript", "SQL"],
   },
   {
-    category: "Mobile",
-    items: ["React Native", "Expo"],
+    category: "Frontend Development",
+    items: ["React.js", "Next.js", "HTML", "CSS"],
   },
   {
-    category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    category: "Styling & UI",
+    items: ["Tailwind CSS", "Bootstrap"],
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    category: "Backend Development",
+    items: ["Node.js", "Express.js", "REST APIs"],
   },
   {
-    category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    category: "Databases",
+    items: ["MongoDB", "MySQL"],
   },
   {
-    category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    category: "Tools & Platforms",
+    items: ["Git", "GitHub", "Postman", "Jupyter Notebook"],
+  },
+  {
+    category: "Problem Solving",
+    items: ["Data Structures", "Algorithms", "380+ LeetCode Problems"],
   },
 ];
+
 
 const socials = [
   {
@@ -132,28 +139,29 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/Prajjwaljai",
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
+    text: "Gmail",
+    icon: "/icons/icon8.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=prajjwalj885@gmail.com",
+  
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com/in/prajjwal-jaiswal",
   },
 ];
 
@@ -225,52 +233,43 @@ const WORK_LOCATION = {
     // ▶ Project 1
     {
       id: 5,
-      name: "Nike Ecommerce Website Application",
+      name: "AI-Powered Stock Market Platform",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] left-5", // optional: Finder window position
+      position: "top-10 left-5",
+      windowPosition: "top-[5vh] left-5",
       children: [
         {
           id: 1,
-          name: "Nike Project.txt",
+          name: "Stock Market Platform.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
-          position: "top-5 left-10",
+          position: "top-10 left-0",
           description: [
-            "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-            "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-            "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-            "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+            "A full-stack stock market platform that provides real-time stock prices, company data, and personalized watchlists.",
+            "Integrated third-party market APIs to fetch live data and present actionable insights in a clean, intuitive dashboard.",
+            "Implemented background workflows and notifications to keep users informed about price changes and market activity.",
+            "Built using Next.js, TypeScript, and Tailwind CSS with a scalable backend architecture for performance and reliability.",
           ],
         },
         {
           id: 2,
-          name: "nike.com",
+          name: "stock-platform.demo",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
-          position: "top-10 right-20",
+          href: "https://github.com/Prajjwaljai/Metrik-stock_tracker",
+          position: "top-10 left-30",
         },
         {
-          id: 4,
-          name: "nike.png",
+          id: 3,
+          name: "stock-platform.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/project-1.png",
-        },
-        {
-          id: 5,
-          name: "Design.fig",
-          icon: "/images/plain.png",
-          kind: "file",
-          fileType: "fig",
-          href: "https://google.com",
-          position: "top-60 right-20",
+          position: "top-10 left-70",
+          imageUrl: "/images/dashboard.png",
         },
       ],
     },
@@ -278,60 +277,52 @@ const WORK_LOCATION = {
     // ▶ Project 2
     {
       id: 6,
-      name: "AI Resume Analyzer",
+      name: "Splitzy – Group Expense Sharing App",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-80",
+      position: "top-10 left-40",
       windowPosition: "top-[20vh] left-7",
       children: [
         {
           id: 1,
-          name: "AI Resume Analyzer Project.txt",
+          name: "Splitzy Project.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
-          position: "top-5 right-10",
+          position: "top-10 left-0",
           description: [
-            "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-            "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-            "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-            "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+            "A group expense management web application that helps users track shared spending and settle balances effortlessly.",
+            "Allows creation of groups, expense entries, and automatic calculation of who owes whom in real time.",
+            "Focused on clean UI and accurate calculations to simplify real-world expense sharing scenarios.",
+            "Developed using Next.js, React, Tailwind CSS, and MongoDB for a smooth and responsive user experience.",
           ],
         },
         {
           id: 2,
-          name: "ai-resume-analyzer.com",
+          name: "splitzy.app",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
-          position: "top-20 left-20",
+          href: "https://splitzy-eight.vercel.app/",
+          position: "top-10 left-30",
         },
         {
-          id: 4,
-          name: "ai-resume-analyzer.png",
+          id: 3,
+          name: "splitzy.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 left-80",
+          position: "top-10 left-50",
           imageUrl: "/images/project-2.png",
         },
-        {
-          id: 5,
-          name: "Design.fig",
-          icon: "/images/plain.png",
-          kind: "file",
-          fileType: "fig",
-          href: "https://google.com",
-          position: "top-60 left-5",
-        },
+
       ],
     },
 
     // ▶ Project 3
     {
       id: 7,
-      name: "Food Delivery App",
+      name: "Term Deposit Subscription Prediction",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-80",
@@ -339,44 +330,36 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "Food Delivery App Project.txt",
+          name: "ML Prediction Model.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
-          position: "top-5 left-10",
+          position: "top-10 left-0",
           description: [
-            "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-            "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-            "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-            "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+            "A machine learning model designed to predict customer subscription to term deposits based on historical banking data.",
+            "Performed data preprocessing, feature selection, and model training using supervised learning techniques.",
+            "Evaluated model performance using accuracy, precision, and recall to ensure reliable predictions.",
+            "Implemented using Python, Pandas, and Scikit-learn, demonstrating practical application of data science concepts.",
           ],
         },
         {
           id: 2,
-          name: "food-delivery-app.com",
+          name: "prediction-demo.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
-          position: "top-10 right-20",
+          href: "https://github.com/Prajjwaljai/Term-deposit-prediction-model",
+          position: "top-10 left-40",
         },
+
         {
-          id: 4,
-          name: "food-delivery-app.png",
-          icon: "/images/image.png",
-          kind: "file",
-          fileType: "img",
-          position: "top-52 right-80",
-          imageUrl: "/images/project-3.png",
-        },
-        {
-          id: 5,
+          id: 3,
           name: "Design.fig",
           icon: "/images/plain.png",
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
-          position: "top-60 right-20",
+          position: "top-10 left-70",
         },
       ],
     },
@@ -396,41 +379,24 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      position: "top-10 left-0",
+      imageUrl: "/images/prajjwal1.jpg",
     },
+    
     {
       id: 2,
-      name: "casual-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
-    },
-    {
-      id: 3,
-      name: "conference-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-52 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
-    },
-    {
-      id: 4,
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-10 left-30",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/prajjwal1.jpg",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+          "Hey, I’m Prajjwal 👋 — a web developer passionate about building modern, interactive applications that solve real problems.",
+          "I specialize in JavaScript, React, and Next.js, with a strong focus on performance and clean architecture.",
+          "I believe good software comes from thoughtful design, clear logic, and attention to detail in both UI and UX.",
+          "Outside of development, I actively explore emerging technologies, continuously work on improving my technical skills.",
       ],
     },
   ],
@@ -449,11 +415,11 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
+      href: "/files/Resume_.pdf",
     },
   ],
 };
+
 
 const TRASH_LOCATION = {
   id: 4,
@@ -468,7 +434,7 @@ const TRASH_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-10",
+      position: "top-10 left-0",
       imageUrl: "/images/trash-1.png",
     },
     {
@@ -477,7 +443,7 @@ const TRASH_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-40 left-80",
+      position: "top-10 left-30",
       imageUrl: "/images/trash-2.png",
     },
   ],
@@ -493,14 +459,56 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  contact: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  safari: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  terminal: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  txtfile: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  imgfile: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
+  resume: {
+    isOpen: false,
+    isMinimized: false,
+    isMaximized: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+  },
 };
+
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

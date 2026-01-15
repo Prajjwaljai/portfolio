@@ -15,7 +15,7 @@ const Terminal = () => {
             <span className="font-bold">@prajjwal %</span>show tech stack
         </p>
         <div className="label">
-            <p className="w-32">Category</p>
+            <p className="w-50">Category</p>
             <p>Technologies</p>
         </div>
         <ul className="content">
@@ -35,7 +35,7 @@ const Terminal = () => {
                 ))}
         </ul>
         <div className="footnote">
-            <p><Check size={20} />5 of 5 stack loaded successfully</p>
+            <p><Check size={20} />7 of 7 stack loaded successfully</p>
             <p className="text-black">
                 <Flag size={15} fill="black"/>
                 Render time:6ms

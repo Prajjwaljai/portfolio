@@ -58,20 +58,24 @@ const Dock = () => {
     };
   }, []);
 
-  const toggleApp = (app) => {
-    if(!app.canOpen) return;
+const toggleApp = (app) => {
+  if (!app.canOpen) return;
 
-    const Window = useWindowStore.getState().windows?.[app.id];
-    if (!Window) {
-      console.error(`Window not found for app: ${app.id}`);
-      return;
-    }
-    if(Window.isOpen){
-      closeWindow(app.id);
-    }else{
-      openWindow(app.id);
-    }
-  };
+  const win = useWindowStore.getState().windows?.[app.id];
+  if (!win) {
+    console.error(`Window not found for app: ${app.id}`);
+    return;
+  }
+
+  // ✅ macOS-like behavior
+  if (win.isOpen && !win.isMinimized) {
+    closeWindow(app.id);
+  } else {
+    openWindow(app.id);
+    focusWindow(app.id);
+  }
+};
+
 
   return (
     <section id="dock">

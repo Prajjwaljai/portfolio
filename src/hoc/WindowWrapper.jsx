@@ -1,6 +1,5 @@
 import useWindowStore from "#store/window";
-import { useLayoutEffect } from "react";
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
@@ -8,42 +7,76 @@ import { Draggable } from "gsap/Draggable";
 const WindowWrapper = (Component, windowKey) => {
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+
+    // ✅ SAFE FALLBACK (no early return)
+    const {
+      isOpen = false,
+      isMinimized = false,
+      isMaximized = false,
+      zIndex = 0,
+    } = windows[windowKey] || {};
+
     const ref = useRef(null);
 
+    // 🔹 OPEN animation
     useGSAP(() => {
       const el = ref.current;
-      if (!el || !isOpen) return;
+      if (!el || !isOpen || isMinimized) return;
 
-        el.style.display = "block";
-        gsap.fromTo(
-            el,
-            { scale: 0.8, opacity: 0, y: 40 },
-            { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
-        );
-    }, [isOpen]);
+      el.style.display = "block";
+      gsap.fromTo(
+        el,
+        { scale: 0.8, opacity: 0, y: 40 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+      );
+    }, [isOpen, isMinimized]);
 
-    useGSAP(()=>{
+    // 🔹 Drag + focus
+    useGSAP(() => {
       const el = ref.current;
-      if(!el) return;
-      const [instance] = Draggable.create(el, {onPress: ()=> focusWindow(windowKey),});
-      return () => instance.kill();
-    }, []);
+      if (!el) return;
 
+      const [instance] = Draggable.create(el, {
+        onPress: () => focusWindow(windowKey),
+      });
+
+      if (isMaximized) {
+        instance.disable();
+      } else {
+        instance.enable();
+      }
+
+      return () => instance.kill();
+    }, [isMaximized]);
+
+    // 🔹 Handle open / minimize
     useLayoutEffect(() => {
       const el = ref.current;
       if (!el) return;
-      el.style.display = isOpen ? "block" : "none";
-    }, [isOpen]);
+
+      if (!isOpen || isMinimized) {
+        el.style.display = "none";
+      } else {
+        el.style.display = "block";
+      }
+    }, [isOpen, isMinimized]);
+
     return (
-      <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+      <section
+        id={windowKey}
+        ref={ref}
+        style={{ zIndex }}
+        className={`absolute ${isMaximized ? "window-maximized" : ""}`}
+      >
         <Component {...props} />
       </section>
     );
   };
+
   Wrapped.displayName = `WindowWrapper(${
     Component.displayName || Component.name || "Component"
   })`;
+
   return Wrapped;
 };
 

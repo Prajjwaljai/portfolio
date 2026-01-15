@@ -2,7 +2,7 @@ import React from "react";
 import { navIcons, navLinks } from "#constants";
 import dayjs from "dayjs";
 import useWindowStore from "#store/window";
-
+import { locations } from "#constants";
 
 const Navbar = () => {
   const {openWindow} = useWindowStore();
@@ -12,11 +12,27 @@ const Navbar = () => {
         <img src="/images/logo.svg" alt="Logo" />
         <p className="font-bold">Prajjwal's Portfolio</p>
         <ul>
-          {navLinks.map(({id, name, type}) => (
+          {/* {navLinks.map(({id, name, type}) => (
           <li key={id} onClick={()=> openWindow(type)}>
             <p>{name}</p>
           </li>
-          ))}
+          ))} */}
+          {navLinks.map(({ id, name, type }) => (
+          <li
+            key={id}
+            onClick={() => {
+              if (type === "resume") {
+                const resumeFile = locations.resume.children[0];
+                openWindow("resume", resumeFile);
+              } else {
+                openWindow(type);
+              }
+            }}
+          >
+            <p>{name}</p>
+          </li>
+        ))}
+
         </ul>
       </div>
       <div>
